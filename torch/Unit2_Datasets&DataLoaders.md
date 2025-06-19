@@ -13,12 +13,11 @@ We load the [FashionMNIST](https://pytorch.org/vision/stable/datasets.html#fashi
 - `transform` and `target_transform` specify the feature and label transformations
 
 ```python
-import torch
-from torch.utils.data import Dataset
+import Torch
+from Torch.utils.data import Dataset
 from torchvision import datasets
 from torchvision.transforms import ToTensor
 import matplotlib.pyplot as plt
-
 
 training_data = datasets.FashionMNIST(
     root="data",
@@ -133,8 +132,9 @@ def __getitem__(self, idx):
 The `Dataset` retrieves our dataset’s features and labels one sample at a time. While training a model, we typically want to pass samples in “minibatches”, reshuffle the data at every epoch to reduce model overfitting, and use Python’s `multiprocessing` to speed up data retrieval.
 
 `DataLoader` is an iterable that abstracts this complexity for us in an easy API.
+
 ```python
-from torch.utils.data import DataLoader
+from Torch.utils.data import DataLoader
 
 train_dataloader = DataLoader(training_data, batch_size=64, shuffle=True)
 test_dataloader = DataLoader(test_data, batch_size=64, shuffle=True)
